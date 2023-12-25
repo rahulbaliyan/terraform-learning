@@ -2,7 +2,7 @@ name: My First GitHub Actions
 
 on: [push]
 
-jobs:
+jobs: 
   build:
     runs-on: ubuntu-latest
 
@@ -22,7 +22,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
 
+
     - name: Run tests
       run: |
         cd src
         python -m pytest addition.py
+
+    - uses: shallwefootball/s3-upload-action@master
+      name: Upload to S3
+      id: S3
+      with:
+        aws_key_id: ${{ secrets.ACCESS_KEY }}
+        aws_secret_access_key: ${{ secrets.SECRET_KEY}}
+        aws_bucket: ${{ secrets.BUCKET }}
+        source_dir: 'src'
