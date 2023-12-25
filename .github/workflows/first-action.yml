@@ -28,11 +28,11 @@ jobs:
         cd src
         python -m pytest addition.py
 
-    - uses: shallwefootball/s3-upload-action@master
     - name: Upload to S3
+    - uses: shallwefootball/s3-upload-action@master
       id: S3
       with:
         aws_key_id: ${{ secrets.ACCESS_KEY }}
         aws_secret_access_key: ${{ secrets.SECRET_KEY}}
         aws_bucket: ${{ secrets.BUCKET }}
-        source_dir: 'src'
+        source_dir: src
