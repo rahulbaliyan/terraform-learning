@@ -41,5 +41,4 @@ jobs:
         aws_key_id: ${{ secrets.ACCESS_KEY }}
         aws_secret_access_key: ${{ secrets.SECRET_KEY}}
         aws_bucket: ${{ secrets.BUCKET }}
-        aws-region: ap-south-1
         source_dir: src
