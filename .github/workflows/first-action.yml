@@ -27,6 +27,12 @@ jobs:
       run: |
         cd src
         python -m pytest addition.py
+        
+    - name: Debug Secrets
+      run: |
+        echo "ACCESS_KEY: ${{ secrets.ACCESS_KEY }}"
+        echo "SECRET_KEY: ${{ secrets.SECRET_KEY }}"
+        echo "BUCKET: ${{ secrets.BUCKET }}"
 
     - uses: shallwefootball/s3-upload-action@master
       name: Upload to S3
