@@ -34,7 +34,7 @@ jobs:
         echo "SECRET_KEY: ${{ secrets.SECRET_KEY }}"
         echo "BUCKET: ${{ secrets.BUCKET }}"
 
-    - uses: shallwefootball/s3-upload-action@master
+    - uses: ochanje210/s3-upload-action@master
       name: Upload to S3 bucket
       id: S3
       with:
