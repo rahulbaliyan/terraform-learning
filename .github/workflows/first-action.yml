@@ -41,4 +41,5 @@ jobs:
         aws_key_id: ${{ secrets.ACCESS_KEY }}
         aws_secret_access_key: ${{ secrets.SECRET_KEY}}
         aws_bucket: ${{ secrets.BUCKET }}
-        source_dir: src
+        source_dir: src/addition.py
+        dest_dir: src
